@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "web-rainbow-fe",
   "private": true,
   "scripts": {
     "build": "turbo run build",
