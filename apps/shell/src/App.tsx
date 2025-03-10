@@ -1,25 +1,30 @@
-import { lazy, Suspense, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import ErrorBoundary from './ErrorBoundary'
-const Video = lazy(() => import('rb_video/App'))
+import { lazy, Suspense, useState } from "react";
+
+import reactLogo from "./assets/react.svg";
+import ErrorBoundary from "./ErrorBoundary";
+
+import viteLogo from "/vite.svg";
+
+import "./App.css";
+
+const Video = lazy(() => import("rb_video/App"));
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-      <>
-        <div>awdaw
-          <ErrorBoundary>
-          <Suspense fallback={<div>Loading...</div>}>
-          <Video />
+    <>
+      <div>
+        awdaw ㅁㅈㅇㅁㅈㅇ
+        <ErrorBoundary>
+          <Suspense>
+            <Video />
           </Suspense>
-          </ErrorBoundary>
-        <a href="https://vite.dev" target="_blank">
+        </ErrorBoundary>
+        <a href="https://vite.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
+        <a href="https://react.dev" target="_blank" rel="noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
@@ -36,7 +41,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

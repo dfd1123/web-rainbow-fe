@@ -1,9 +1,8 @@
 {
-  "name": "@packages/ui",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@packages/rb-ui",
+  "version": "1.0.0",
   "exports": {
-    "./test": "./src/test.tsx",
+    "./button/Button": "./button/Button.tsx",
     "./*": "./src/*.tsx"
   },
   "scripts": {
@@ -22,6 +21,8 @@
     "typescript": "5.8.2"
   },
   "dependencies": {
+    "@packages/rb-utils": "*",
+    "classnames": "^2.5.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   }
