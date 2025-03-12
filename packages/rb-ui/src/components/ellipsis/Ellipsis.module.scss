@@ -1,0 +1,80 @@
+.ellipsis-wrap {
+  color: var(--rb-label-strong);
+
+  &.shortened {
+    .btn-ellipsis-trigger {
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &.enable-show-more {
+    &.shortened {
+      .btn-ellipsis-trigger {
+        svg {
+          width: 12px;
+          margin-top: 2.5px;
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+
+  .ellipsis-content {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    font-size: inherit;
+    font-style: normal;
+    font-weight: inherit;
+    line-height: inherit;
+    text-overflow: ellipsis;
+    transition: height 0.3s;
+    will-change: height;
+
+    @include text-14-regular;
+
+    @include breakpoint-768 {
+      @include text-18-regular;
+    }
+  }
+
+  .btn-ellipsis-trigger {
+    display: flex;
+    height: 18px;
+    align-items: center;
+    margin-top: $sp-8;
+    background: transparent;
+    color: inherit;
+    color: var(--rb-label-neutral);
+    font-size: inherit;
+    font-style: normal;
+    font-weight: inherit;
+    line-height: inherit;
+
+    @include text-12-regular;
+
+    @include breakpoint-768 {
+      height: 20px;
+
+      @include text-14-regular;
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+      transform: rotate(-90deg);
+      transition: transform 0.25s;
+
+      path {
+        fill: var(--rb-label-neutral);
+      }
+
+      @include breakpoint-768 {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

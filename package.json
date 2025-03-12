@@ -3,13 +3,15 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "build:dev": "turbo run build:dev",
     "dev": "turbo run dev",
     "preview": "turbo run preview",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "rb-gen:component": "cd packages/rb-components && turbo gen rb-component",
-    "rb-gen:util": "cd packages/rb-utils && turbo gen rb-utils"
+    "rb-gen:component": "cd packages/rb-ui && turbo gen rb-component",
+    "rb-gen:util": "cd packages/rb-utils && turbo gen rb-utils",
+    "rb-gen:hook": "cd packages/rb-hooks && turbo gen rb-hook"
   },
   "devDependencies": {
     "prettier": "^3.5.3",

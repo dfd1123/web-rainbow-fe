@@ -1,0 +1,41 @@
+{
+  "name": "rb-storybook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.23",
+    "@storybook/addon-interactions": "7.5.0 ",
+    "@storybook/addon-links": "7.5.0 ",
+    "@storybook/blocks": "7.5.0 ",
+    "@storybook/react": "7.5.0 ",
+    "@storybook/testing-library": "^0.2.2",
+    "@svgr/webpack": "^8.1.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^7.1.2",
+    "env-cmd": "^10.1.0",
+    "file-loader": "^6.2.0",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^4.0.0"
+  },
+  "scripts": {
+    "dev": "env-cmd -e local storybook dev -p 6008",
+    "build-storybook": "yarn && NODE_ENV=production cross-env NODE_OPTIONS=--openssl-legacy-provider storybook build"
+  },
+  "resolutions": {
+    "jackspeak": "2.1.1"
+  },
+  "dependencies": {
+    "@packages/rb-ui": "*",
+    "@packages/rb-utils": "*",
+    "@storybook/addon-controls": "7.5.0 ",
+    "@storybook/addon-themes": "7.5.0 ",
+    "@storybook/nextjs": "7.5.0",
+    "@storybook/theming": "7.5.0 ",
+    "next": "^14.1.4",
+    "react-docgen-typescript": "2.2.2",
+    "storybook": "7.5.0",
+    "storybook-addon-react-docgen": "1.2.43"
+  }
+}

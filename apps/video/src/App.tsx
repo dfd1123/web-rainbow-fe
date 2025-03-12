@@ -1,6 +1,11 @@
 import { useState } from "react";
+
+import { Button } from "@packages/rb-ui";
+
 import reactLogo from "./assets/react.svg";
+
 import viteLogo from "/vite.svg";
+
 import "./App.css";
 
 function App() {
@@ -10,6 +15,7 @@ function App() {
     <>
       <div>
         안녕하세요 종완님??ㅗㅗ
+        <Button>kjjkjkj</Button>
         <a href="https://vite.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>

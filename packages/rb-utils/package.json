@@ -2,11 +2,13 @@
   "name": "@packages/rb-utils",
   "version": "1.0.0",
   "exports": {
+    "./etcUtils": "./src/etcUtils.ts",
+    "./browserUtils": "./src/browserUtils.ts",
     "./parserUtils": "./src/parserUtils.ts",
     "./*": "./src/*.ts"
   },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint .",
     "generate:utils": "turbo gen rb-utils",
     "check-types": "tsc --noEmit"
   },

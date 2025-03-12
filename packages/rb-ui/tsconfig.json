@@ -1,9 +1,10 @@
 {
-    "extends": "@packages/typescript-config/react-library.json",
+    "extends": "@packages/typescript-config/rollup-react-library.json",
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@/*": ["src/*"]
+            "@/*": ["src/*"],
+            "~scripts/*": ["scripts/*"]
         }
     }
 }

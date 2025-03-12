@@ -23,6 +23,7 @@ export const config = [
     },
     rules: {
       "turbo/no-undeclared-env-vars": "warn",
+      "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
       "prettier/prettier": ["error", {
         "semi": true
       }],
@@ -74,11 +75,6 @@ export const config = [
     },
   },
   {
-    plugins: {
-      onlyWarn,
-    },
-  },
-  {
-    ignores: ["dist/**", "node_modules/", "*.js"],
+    ignores: ["dist/**", "node_modules/**", "**/*.js"],
   },
 ];

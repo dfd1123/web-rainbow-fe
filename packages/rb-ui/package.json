@@ -1,29 +1,97 @@
 {
   "name": "@packages/rb-ui",
   "version": "1.0.0",
+  "sideEffects": false,
+  "main": "./dist/components/index.js",
+  "module": "./dist/esm/components/index.js",
+  "types": "./dist/rb-ui/src/components/index.d.ts",
+  "typings": "dist/rb-ui/src/components/index.d.ts",
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "dist"
+  ],
   "exports": {
-    "./button/Button": "./button/Button.tsx",
-    "./*": "./src/*.tsx"
+    ".": {
+      "types": "./dist/rb-ui/src/components/index.d.ts",
+      "import": "./dist/esm/components/index.js",
+      "require": "./dist/components/index.js"
+    },
+    "./provider": {
+      "types": "./dist/rb-ui/src/provider/index.d.ts",
+      "import": "./dist/esm/provider/index.esm.mjs",
+      "require": "./dist/provider/index.cjs.js"
+    },
+    "./modules": {
+      "types": "./dist/rb-ui/src/modules/index.d.ts",
+      "import": "./dist/esm/modules/index.esm.mjs",
+      "require": "./dist/modules/index.cjs.js"
+    }
   },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint .",
     "generate:component": "turbo gen react-component",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "dev": "NODE_ENV=development rollup -c && NODE_ENV=development node scripts/svgComponentGenerator.js & NODE_ENV=development rollup -cw",
+    "build": "rm -rf dist && node scripts/svgComponentGenerator.js && NODE_ENV=production rollup -c"
   },
   "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.3",
+    "@babel/node": "^7.23.9",
+    "@babel/plugin-transform-runtime": "^7.24.3",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.24.3",
+    "@babel/preset-react": "^7.24.1",
+    "@babel/preset-typescript": "^7.24.1",
+    "@babel/runtime-corejs3": "^7.24.8",
+    "@optimize-lodash/rollup-plugin": "^5.0.2",
     "@packages/eslint-config": "*",
     "@packages/typescript-config": "*",
+    "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-replace": "^6.0.2",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@svgr/rollup": "^8.1.0",
     "@turbo/gen": "^2.4.4",
+    "@types/fs-extra": "^11.0.4",
+    "@types/lodash": "^4.17.16",
     "@types/node": "^22.13.9",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
     "eslint": "^9.21.0",
-    "typescript": "5.8.2"
+    "rollup": "^4.35.0",
+    "rollup-plugin-ignore": "^1.0.10",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-preserve-directives": "^0.4.0",
+    "rollup-plugin-rename-node-modules": "^1.3.1",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "rollup-plugin-visualizer": "^5.14.0",
+    "sass": "^1.77.6",
+    "ts-node": "^10.9.2",
+    "ttypescript": "^1.5.15",
+    "typescript": "5.8.2",
+    "webpack": "^5.98.0"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "dependencies": {
+    "@packages/rb-hooks": "*",
     "@packages/rb-utils": "*",
+    "chokidar": "2.1.8",
     "classnames": "^2.5.1",
+    "decimal.js": "^10.5.0",
+    "fs-extra": "^11.3.0",
+    "lodash": "^4.17.21",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "swiper": "^11.1.1"
   }
 }
