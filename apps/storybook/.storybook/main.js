@@ -22,7 +22,7 @@ const config = {
     checkOptions: {},
     reactDocgen: "react-docgen-typescript",
     reactDocgenTypescriptOptions: {
-      tsconfig: './tsconfig.app.json',
+      tsconfig: '../tsconfig.app.json',
       shouldExtractLiteralValuesFromEnum: true,
       shouldRemoveUndefinedFromOptional: true,
       propFilter: prop => {
